@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #000000;
+  --color-bone: #f4f1ee;
+  --color-coral: #f44849;
+  --color-ember: #ff5731;
+  --color-smoke: #3d3d3d;
+  --color-ash: #757575;
+  --color-mist: #979797;
+  --color-panel: #111111;
+  --color-panel-2: #1a1a1a;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background: var(--color-void);
+  color: var(--color-bone);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--color-void);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+::selection {
+  background: var(--color-coral);
+  color: var(--color-void);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-coral);
+  outline-offset: 4px;
+}
+
+/* Tiny mono label used for navigation and section counters. */
+.label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Text that rolls up to a second copy on hover. */
+.roll {
+  display: inline-grid;
+  overflow: hidden;
+  line-height: 1.2;
+}
+.roll > span {
+  grid-area: 1 / 1;
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.roll > span + span {
+  transform: translateY(105%);
+}
+a:hover .roll > span:first-child,
+a:focus-visible .roll > span:first-child,
+button:hover .roll > span:first-child {
+  transform: translateY(-105%);
+}
+a:hover .roll > span + span,
+a:focus-visible .roll > span + span,
+button:hover .roll > span + span {
+  transform: translateY(0);
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee {
+  animation: marquee var(--speed, 40s) linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    animation: none;
+  }
+  .roll > span {
+    transition: none;
+  }
+}
