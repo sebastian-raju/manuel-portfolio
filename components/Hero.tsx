@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { gsap, useGSAP, prefersReducedMotion } from "@/lib/gsap";
-import { hero, stack } from "@/content";
+import { hero, stack, site } from "@/content";
 import Orb from "./Orb";
 
 export default function Hero() {
@@ -38,6 +38,7 @@ export default function Hero() {
         <Orb className="hero-orb absolute left-1/2 top-[-4%] h-[62vh] w-[62vh] max-w-[92vw] -translate-x-1/2" />
 
         <h1 className="relative z-10 mt-auto px-4 pb-[18vh] text-center text-[clamp(2.75rem,8.35vw,7.5rem)] font-normal leading-[0.92] tracking-[-0.05em] md:pb-[22vh]">
+          <span className="sr-only">{site.firstName} {site.lastName}, data science and sport: </span>
           {hero.lines.map((line) => (
             <span key={line} className="block overflow-hidden pb-[0.06em]">
               {line.split(" ").map((word, wi, arr) => (

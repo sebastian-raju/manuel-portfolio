@@ -14,6 +14,18 @@ export const site = {
   github: "https://github.com/", // PLACEHOLDER: add Manuel's GitHub URL
   githubHandle: "GitHub", // PLACEHOLDER
   location: "Newcastle upon Tyne, UK",
+  url: "https://www.manuelcherian.com",
+  keywords: [
+    "Manuel Cherian",
+    "sports data analyst",
+    "football analytics",
+    "performance analysis",
+    "data science and sport",
+    "Newcastle University",
+    "sports data science",
+    "football data",
+    "data validation",
+  ],
   year: "2026",
 };
 

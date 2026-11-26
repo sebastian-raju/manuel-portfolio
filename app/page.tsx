@@ -8,10 +8,12 @@ import Process from "@/components/Process";
 import Principles from "@/components/Principles";
 import Curiosity from "@/components/Curiosity";
 import Contact from "@/components/Contact";
+import StructuredData from "@/components/StructuredData";
 
 export default function Home() {
   return (
     <>
+      <StructuredData />
       <Nav />
       <main>
         <Hero />
